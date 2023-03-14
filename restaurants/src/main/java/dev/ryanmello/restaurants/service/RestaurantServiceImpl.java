@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 @Service
@@ -25,7 +26,17 @@ public class RestaurantServiceImpl implements RestaurantService {
     }
 
     @Override
-    public Optional<Restaurant> getRestaurantById(Integer id) {
-        return Optional.empty();
+    public Optional<Restaurant> getRestaurantById(String id) {
+        return restaurantRepository.findById(id);
     }
+
+    @Override
+    public void deleteRestaurantById(String id) {
+        restaurantRepository.deleteById(id);
+    }
+
+//    @Override
+//    public void deleteAll() {
+//        restaurantRepository.deleteAll();
+//    }
 }

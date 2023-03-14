@@ -29,12 +29,17 @@ public class RestaurantController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Optional<Restaurant>> getRestaurantById(@PathVariable Integer id){
+    public ResponseEntity<Optional<Restaurant>> getRestaurantById(@PathVariable String id){
         return new ResponseEntity<>(restaurantService.getRestaurantById(id), HttpStatus.OK);
     }
 
+    @DeleteMapping("/{id}")
+    public void deleteRestaurantById(@PathVariable String id){
+        restaurantService.deleteRestaurantById(id);
+    }
 
-
-
-
+//    @DeleteMapping
+//    public void deleteAll(){
+//        restaurantService.deleteAll();
+//    }
 }

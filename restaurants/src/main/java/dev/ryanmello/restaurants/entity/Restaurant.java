@@ -19,12 +19,12 @@ public class Restaurant {
     private String image;
 
     // restaurant with no image defaults to image not found
-    public Restaurant(String id, String name, String type, String address, String cost) {
-        this.id = id;
-        this.name = name;
-        this.type = type;
-        this.address = address;
-        this.cost = cost;
-        this.image = "https://static.vecteezy.com/system/resources/previews/005/337/799/original/icon-image-not-found-free-vector.jpg";
-    }
+//    public Restaurant(Integer id, String name, String type, String address, String cost) {
+//        this.id = id;
+//        this.name = name;
+//        this.type = type;
+//        this.address = address;
+//        this.cost = cost;
+//        this.image = "https://static.vecteezy.com/system/resources/previews/005/337/799/original/icon-image-not-found-free-vector.jpg";
+//    }
 }
