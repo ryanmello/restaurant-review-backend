@@ -35,6 +35,19 @@ public class RestaurantServiceImpl implements RestaurantService {
         restaurantRepository.deleteById(id);
     }
 
+    @Override
+    public Restaurant updateRestaurantById(String id, Restaurant newRestaurant) {
+        return restaurantRepository.findById(id)
+                .map(restaurant -> {
+                    restaurant.setName(newRestaurant.getName());
+                    restaurant.setType(newRestaurant.getType());
+                    restaurant.setAddress(newRestaurant.getAddress());
+                    restaurant.setCost(newRestaurant.getCost());
+                    restaurant.setImage(newRestaurant.getImage());
+                    return restaurantRepository.save(restaurant);
+                }).orElseThrow(() -> new IllegalArgumentException(id));
+    }
+
 //    @Override
 //    public void deleteAll() {
 //        restaurantRepository.deleteAll();

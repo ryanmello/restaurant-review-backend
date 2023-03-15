@@ -38,6 +38,11 @@ public class RestaurantController {
         restaurantService.deleteRestaurantById(id);
     }
 
+    @PutMapping("/{id}")
+    public Restaurant updateRestaurantById(@PathVariable String id, @RequestBody Restaurant newRestaurant){
+        return restaurantService.updateRestaurantById(id, newRestaurant);
+    }
+
 //    @DeleteMapping
 //    public void deleteAll(){
 //        restaurantService.deleteAll();

@@ -11,5 +11,6 @@ public interface RestaurantService {
     Optional<Restaurant> getRestaurantById(String id);
     Restaurant addRestaurant(Restaurant restaurant);
     void deleteRestaurantById(String id);
+    Restaurant updateRestaurantById(String id, Restaurant newRestaurant);
     //void deleteAll();
 }
