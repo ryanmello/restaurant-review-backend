@@ -2,6 +2,7 @@ package dev.ryanmello.restaurants.entity;
 
 import lombok.*;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "restaurants")
@@ -10,6 +11,10 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @NoArgsConstructor
 @Builder
 public class Restaurant {
+
+    @Transient
+    private static final String SEQUENCE_NAME = "user_sequence";
+
     @Id
     private String id;
     private String name;
