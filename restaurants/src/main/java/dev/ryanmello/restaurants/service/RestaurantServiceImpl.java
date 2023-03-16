@@ -26,17 +26,17 @@ public class RestaurantServiceImpl implements RestaurantService {
     }
 
     @Override
-    public Optional<Restaurant> getRestaurantById(String id) {
+    public Optional<Restaurant> getRestaurantById(int id) {
         return restaurantRepository.findById(id);
     }
 
     @Override
-    public void deleteRestaurantById(String id) {
+    public void deleteRestaurantById(int id) {
         restaurantRepository.deleteById(id);
     }
 
     @Override
-    public Restaurant updateRestaurantById(String id, Restaurant newRestaurant) {
+    public Restaurant updateRestaurantById(int id, Restaurant newRestaurant) {
         return restaurantRepository.findById(id)
                 .map(restaurant -> {
                     restaurant.setName(newRestaurant.getName());
@@ -45,7 +45,7 @@ public class RestaurantServiceImpl implements RestaurantService {
                     restaurant.setCost(newRestaurant.getCost());
                     restaurant.setImage(newRestaurant.getImage());
                     return restaurantRepository.save(restaurant);
-                }).orElseThrow(() -> new IllegalArgumentException(id));
+                }).orElseThrow(() -> new IllegalArgumentException(String.valueOf(id)));
     }
 
 //    @Override

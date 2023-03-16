@@ -8,9 +8,9 @@ import java.util.Optional;
 
 public interface RestaurantService {
     List<Restaurant> getAllRestaurants();
-    Optional<Restaurant> getRestaurantById(String id);
+    Optional<Restaurant> getRestaurantById(int id);
     Restaurant addRestaurant(Restaurant restaurant);
-    void deleteRestaurantById(String id);
-    Restaurant updateRestaurantById(String id, Restaurant newRestaurant);
+    void deleteRestaurantById(int id);
+    Restaurant updateRestaurantById(int id, Restaurant newRestaurant);
     //void deleteAll();
 }

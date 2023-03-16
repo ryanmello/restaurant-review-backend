@@ -13,10 +13,10 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Restaurant {
 
     @Transient
-    private static final String SEQUENCE_NAME = "user_sequence";
+    public static final String SEQUENCE_NAME = "user_sequence";
 
     @Id
-    private String id;
+    private int id;
     private String name;
     private String type; // ex: italian, mexican, sandwich, breakfast
     private String address;
