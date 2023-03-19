@@ -44,6 +44,9 @@ public class RestaurantServiceImpl implements RestaurantService {
                     restaurant.setAddress(newRestaurant.getAddress());
                     restaurant.setCost(newRestaurant.getCost());
                     restaurant.setImage(newRestaurant.getImage());
+                    restaurant.setDescription(newRestaurant.getDescription());
+                    restaurant.setPhone(newRestaurant.getPhone());
+                    restaurant.setWebsite(newRestaurant.getWebsite());
                     return restaurantRepository.save(restaurant);
                 }).orElseThrow(() -> new IllegalArgumentException(String.valueOf(id)));
     }
