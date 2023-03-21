@@ -50,9 +50,4 @@ public class RestaurantServiceImpl implements RestaurantService {
                     return restaurantRepository.save(restaurant);
                 }).orElseThrow(() -> new IllegalArgumentException(String.valueOf(id)));
     }
-
-//    @Override
-//    public void deleteAll() {
-//        restaurantRepository.deleteAll();
-//    }
 }

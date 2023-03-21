@@ -19,8 +19,12 @@ public class ReviewService {
     private MongoTemplate mongoTemplate;
 
     public Review createReview(String reviewBody, Integer id) {
+        /* create a review object and insert the review into the review repository */
         Review review = reviewRepository.insert(new Review(reviewBody));
 
+        /*  update the restaurant class
+            where the given id matches the id of a restaurant object and
+            apply the review object to the array of review ids in the restaurant class */
         mongoTemplate.update(Restaurant.class)
                 .matching(Criteria.where("id").is(id))
                 .apply(new Update().push("reviewIds").value(review))

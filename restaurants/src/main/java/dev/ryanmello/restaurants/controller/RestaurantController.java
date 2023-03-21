@@ -49,9 +49,4 @@ public class RestaurantController {
     public Restaurant updateRestaurantById(@PathVariable int id, @RequestBody Restaurant newRestaurant){
         return restaurantService.updateRestaurantById(id, newRestaurant);
     }
-
-//    @DeleteMapping
-//    public void deleteAll(){
-//        restaurantService.deleteAll();
-//    }
 }

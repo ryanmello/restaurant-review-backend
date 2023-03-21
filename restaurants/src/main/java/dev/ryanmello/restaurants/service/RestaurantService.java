@@ -12,5 +12,4 @@ public interface RestaurantService {
     Restaurant addRestaurant(Restaurant restaurant);
     void deleteRestaurantById(int id);
     Restaurant updateRestaurantById(int id, Restaurant newRestaurant);
-    //void deleteAll();
 }
